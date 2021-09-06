@@ -45,9 +45,10 @@ class UserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'role'=>['required', 'string', 'max:255'],
         ]);
 
-       // dd($request);
+        //dd($request['role']);
         User::create([
             'name' => $request['name'],
             'email' => $request['email'],
@@ -78,6 +79,9 @@ class UserController extends Controller
     public function edit($id)
     {
         //
+
+        $user=User::find($id);
+        return view('user.edit',compact('user'));
     }
 
     /**
@@ -101,5 +105,19 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function desactiver(Request $request)
+    {   
+
+        User::find($request['membre_id'])->update(['status'=>'desactiver']);
+         return redirect('users')->with('message', 'Utilisateur desactiver');
+    }
+
+
+    public function profile($id)
+    {
+        $user=User::find($id);
+        return view('user.profile',compact('user'));
     }
 }

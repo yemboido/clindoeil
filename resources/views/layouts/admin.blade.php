@@ -15,7 +15,7 @@
         <meta property="og:image" content="" />
         <meta property="og:description" content="" />
 
-        <title>Projet Admin</title>
+        <title>Clindoeil Admin</title>
 
         <!-- Fav Icon -->
 <link rel="icon" href="{{asset('assets/images/fav-icon.png')}}">
@@ -62,7 +62,7 @@
         <!--Sidenav -->
 
         <ul class="sidenav sidenav-fixed" id="sidenav">
-           
+           @if(Auth::user()->role =="admin" or Auth::user()->role =="author")
             <li>
                 <a href="{{route('admin')}}"><i class="material-icons blue-text">dashboard</i>Dashboard</a>           
             </li>
@@ -89,11 +89,12 @@
                 <a href="{{route('publicite.index')}}"><i class="material-icons blue-text">group</i>publicite</a>           
             </li>
 
-
+            @endif
             <li>
                 <div class="divider"></div>
             </li>
 
+            
             <li>
                 <a href="{{route('index')}}"><i class="material-icons blue-text">home</i>Retour au site</a>           
             </li>

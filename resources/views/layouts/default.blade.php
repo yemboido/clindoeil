@@ -15,7 +15,7 @@
         <meta property="og:image" content="" />
         <meta property="og:description" content="" />
 
-        <title>Projet</title>
+        <title>Clindoeil</title>
 
         <!-- Fav Icon -->
         <link rel="icon" href="{{asset('assets/images/fav-icon.png')}}">
@@ -75,14 +75,21 @@
              document.getElementById('logout-form').submit();"><i class="material-icons blue-text">exit_to_app</i>Deconnexion</a>           
             </li>
 
-           
+            @if(Auth::user()->role == "admin")
+             <li>
+            <a href="{{route('admin')}}">Dashboard</a>           
+            </li> 
+            @endif
+             <li>
+            <a href="{{route('profile',Auth::user()->id)}}">Profile</a>           
+            </li>  
+
+
             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
              @csrf
               </form>
-                <!--  <li>
-                <a href="{{route('admin')}}">Dashboard</a>           
-            </li>
- -->       
+               
+                   
                      </ul>
                       </li>
                     @endif

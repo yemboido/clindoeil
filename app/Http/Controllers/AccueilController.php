@@ -16,6 +16,7 @@ class AccueilController extends Controller
     	$articles=Article::latest()->paginate(10);
         $infos=Article::latest()->paginate(10);
         $publicites=Publicite::where('dateFin','>=',date('Y-m-d'))->get(); 
+        //dd($articles);
     	return view('index',compact('categories','articles','infos','publicites'));
     }
 
@@ -23,7 +24,7 @@ class AccueilController extends Controller
     public function lireArticle($id){
         $article=Article::find($id);
         $categories=Categorie::latest()->paginate(10);
-        $commentaires=Commentaire::latest()->paginate(10);
+        $commentaires=Commentaire::where('article_id','=',$article->id)->latest()->paginate(10);
         $infos=Article::latest()->paginate(10);
         return view('index.lireArticle',compact('article','categories','commentaires','infos'));
     }

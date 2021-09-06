@@ -30,46 +30,36 @@
               
               <div class="col s12 m12 l8">
                       <a class="btn btn-primary" href="{{route('users.create')}}">ajouter</a>
-                  <div class="row">
-
+                 <table class="table table-bordered table-stripped table-primary">
+                   <tr>
+                     <th>Nom</th>
+                     <th>Email</th>
+                     <th>Role</th>
+                     <th>Status</th>
+                     <th>Action</th>
+                   </tr>
                     @foreach($menbres as $user)
-                    <div class="col s4 m5 15" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-                      <div class="card">
-                        <div class="card-image">
-                          <img class="" src="assets/images/persons/author-2.jpg" height="225;">
-                          <span class="card-title orange_txt"></span>
-                          
-                        </div>
-                        <div class="card-content center">
-                          <p>{{$user->name}} {{$user->prenom}}</p>
-                          <p>{{$user->email}}</p>
-                        </div>
-                        <!-- <div class="card-action center">
-                          <a href="#" class="waves-effect waves-light">Ses articles</a>
-                        </div> -->
-                        
-                      </div>
-                    </div>
-                    @endforeach
-                  </div>
+                   <tr>
+                     <td>{{$user->name}}</td>
+                     <td>{{$user->email}}</td>
+                     <td>{{$user->role}}</td>
+                     <td>{{$user->status}}</td>
+                     <td>
+                      <form action="{{route('desactiver')}}" method="post">
+                        @csrf
+                        <input type="hidden" name="membre_id" value="{{$user->id}}">
+                        <button type="submit">desactiver</button>
+                      </form>
+                       
+                     </td>
+                   </tr>
+                   @endforeach
+                 </table>
 
               </div>
 
 
-               <div class="col s12 m12 l4">
-
-                  <!--search bar section-->
-                  <div class="row ">
-                      <form class="col s12" action="#" method="POST">
-                          <div class="app-search">
-                            <i class="material-icons mr-2 search-icon">search</i>
-                            <input id="search" name="search" type="text" placeholder=":)" class="app-filter" required="">
-                          </div>
-                      </form>
-                  </div> 
-
-                </div>
-
+              
            
           
         </main>

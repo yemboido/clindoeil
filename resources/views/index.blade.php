@@ -1,26 +1,42 @@
 @extends('layouts.default')
 @section('content')
         <main>
-            <div class="row ">
 
-             <div class="carousel carousel-slider col" style="width:50%;">
-                @foreach(App\Models\Publicite::where('dateFin','>=',date('Y-m-d'))->get();  as $publicite)
-                <a class="carousel-item" href="#one!">
-                    <img src="{{asset('storage/upload/publicite/'.$publicite->image)}}" class="image-slide">
-                </a>
-               @endforeach
-              </div>
+           
+               <div class="slider">
+    <ul class="slides" >
+
+      @if(App\Models\Publicite::where('dateFin','>=',date('Y-m-d'))->get() !=NULL)
+        @foreach(App\Models\Publicite::where('dateFin','>=',date('Y-m-d'))->get()  as $publicite)
+        <li>
+          <img src="{{asset('storage/upload/publicite/'.$publicite->image)}}"> <!-- random image -->
+          <div class="caption center-align">
+            <!-- <h3>This is our big Tagline!</h3>
+            <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5> -->
+          </div>
+        </li>
+       
+       @endforeach
+       @else
+       <li>
+          <img src="{{asset('assets\images\sliders\slider-1.jpg')}}"> <!-- random image -->
+          <div class="caption center-align">
+            <h3>This is our big Tagline!</h3>
+            <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+          </div>
+        </li>
+
+     @endif
+    </ul>
+  </div>
+<script type="text/javascript">
+   $(document).ready(function(){
+      $('.slider').slider({full_width: true,duration:1});
+    });
+</script>
 
 
-              <div class="carousel carousel-slider col" style="width:50%;">
-                @foreach(App\Models\Publicite::where('dateFin','>=',date('Y-m-d'))->get();  as $publicite)
-                <a class="carousel-item" href="#one!"><img src="{{asset('storage/upload/publicite/'.$publicite->image)}}" class="image-slide">
-                </a>
-                @endforeach
-                
-              </div> 
-
-            </div>
+           
 
             <div class="marge top_3">
                 
@@ -161,4 +177,7 @@
 
 
         </main>
+
+
+
 @endsection

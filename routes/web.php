@@ -6,7 +6,7 @@ use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\AccueilController;
 use App\Http\Controllers\PubliciteController;
 use App\Http\Controllers\AdminController;
-//use App\Http\Controllers\CommentaireController;
+use App\Http\Controllers\CommentaireController;
 use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
@@ -25,9 +25,20 @@ Route::middleware(['auth'])->group(function () {
  Route::resource('categories',CategorieController::class);
  Route::resource('articles',ArticleController::class);
  Route::get('sorted/{id}',[ArticleController::class, 'sortByCategorie'])->name('sorted');
- //Route::resource('commentaire',CommentaireController::class);
+
+
+ Route::resource('commentaire',CommentaireController::class);
+ Route::post('commentaire/{reply_to}',[CommentaireController::class,'reply'])->name('reply_to');
+
+
+
  Route::resource('users',UserController::class);
+  Route::post('desactiver',[UserController::class,'desactiver'])->name('desactiver');
+ Route::get('profile/{id}',[UserController::class,'profile'])->name('profile');
+
+
  Route::resource('publicite',PubliciteController::class);
+
 });
 
 Route::get('/',[AccueilController::class,'index'])->name('index');

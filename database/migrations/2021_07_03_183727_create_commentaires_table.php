@@ -17,10 +17,10 @@ class CreateCommentairesTable extends Migration
             $table->id();
            
             $table->string('commentaire');
-            $table->date('date');
+           
             $table->timestamps();
 
-            $table->foreignId('article_id')->reference('id')->on('articles');
+            $table->foreignId('article_id')->reference('id')->on('articles')->nullable();
             $table->foreignId('user_id')->reference('id')->on('users');
             $table->foreignId('reply_to')->reference('id')->on('users')->nullable();
         });

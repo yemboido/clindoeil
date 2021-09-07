@@ -8,8 +8,9 @@
             <div class="row">
 
                 <div class="col s12 m12 l12">
-                    <form method="post" action="{{route('users.store')}}">
+                    <form method="post" action="{{route('users.update',$user->id)}}">
                          @csrf
+                         @method('PUT')
                         <div class="card-panel">
                             <blockquote>Nouveau Membre</blockquote>
 
@@ -25,6 +26,21 @@
                                  @error('email') <div class="error text-danger" >{{ $message }}</div> @enderror   
                             </div>
 
+
+                            <div  class="input-field">
+                            <label >Role</label>
+
+                                <select class="form-control" name="role">
+                                    <option value="admin">Administrateur</option>
+                                    <option value="author">Auteur</option>
+                                    <option value="subscriber">Utilisateur simple</option>
+                                </select>
+                               
+                                @error('role') <div class="error text-danger" >{{ $message }}</div> @enderror 
+                            </div>
+
+                            @if(Auth::user()->role != "admin")
+
                             <div class="input-field">
                                   <label for="nom">Mots de passe</label>
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
@@ -39,7 +55,7 @@
                                 @error('passwor-confirmation') <div class="error text-danger" >{{ $message }}</div> @enderror 
                             </div>
                             
-
+                          @endif
                            
                             <button class="waves-effect waves-dark orange btn-large center" type="submit">Modifier</button>
 

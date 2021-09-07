@@ -107,6 +107,7 @@
                                 </p>
 
                               </li>
+                              
                               @endforeach
 
                           </ul>
@@ -114,6 +115,8 @@
                       </div>
                       @endif
                     </li>
+                   
+                 
                  @endforeach
                 </ul>
 
@@ -247,13 +250,13 @@
 
 
             <!-- flotting action buttons -->
-            <div class="fixed-action-btn">
+           <!--  <div class="fixed-action-btn">
                 <a class="btn-floating btn-large red pulse">
                   <i class="large material-icons white-text">mode_edit</i>
                 </a>
                 <ul>
                     <!--modal for newsletter-->
-                    <li>
+                   <!--  <li>
                       <a class="btn-floating blue tooltipped modal-trigger" data-position="left" data-tooltip="Subscribe newsletter" href="#newsletter"><i class="material-icons white-text">favorite</i></a>
                     </li>
 
@@ -265,10 +268,10 @@
                       <a class="btn-floating blue tooltipped modal-trigger" data-position="left" data-tooltip="Subscribe newsletter" href="#apropos"><i class="material-icons white-text">favorite</i></a>
                     </li>
                 </ul>
-            </div>
+            </div> -->
 
             <!-- Newsletter Modal -->
-            <div id="newsletter" class="modal">
+            <!-- <div id="newsletter" class="modal">
                 <div class="modal-content">
                     <h4 class="center black-text">Newsletter</h4>
                     <p class="center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p>
@@ -307,7 +310,7 @@
                 <div class="modal-footer">
                   <a href="#!" class="modal-close waves-effect waves-green btn-flat"><i class="material-icons black-text">close</i></a>
                 </div>
-            </div>
+            </div>  -->
           
         </main>
 

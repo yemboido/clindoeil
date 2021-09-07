@@ -24,7 +24,7 @@ class CommentaireController extends Controller
         	'article_id'=>$request['article_id']
         ]);
         session()->flash('message', 'Commentaire bien creer');
-        return  redirect('index')->with('message', 'Article bien creer');
+        return  redirect()->route('lirePlus', ['id' => $request['article_id']]);
     
     }
 
@@ -46,7 +46,15 @@ class CommentaireController extends Controller
         	'reply_to'=>$reply_to
         ]);
         session()->flash('message', 'Commentaire bien creer');
-        return  redirect('/')->with('message', 'Article bien creer');
+        return  redirect()->route('lirePlus', ['id' => $request['article_id']]);
     
+    }
+
+     public function destroy($id)
+    {
+        //
+        Categorie::find($id)->delete();
+   
+         return redirect('/categories')->with('message', 'Categorie bien supprimer');
     }
 }

@@ -44,13 +44,13 @@
                      <td>{{$user->email}}</td>
                      <td>{{$user->role}}</td>
                      <td>{{$user->status}}</td>
-                     <td>
+                     <td class="row">
                       <form action="{{route('desactiver')}}" method="post">
                         @csrf
                         <input type="hidden" name="membre_id" value="{{$user->id}}">
                         <button type="submit">desactiver</button>
                       </form>
-                       
+                       <a href="{{route('users.edit',$user->id)}}" class="btn btn-primary">Modifier</a>
                      </td>
                    </tr>
                    @endforeach

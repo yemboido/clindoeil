@@ -18,7 +18,7 @@
         <title>Clindoeil Admin</title>
 
         <!-- Fav Icon -->
-<link rel="icon" href="{{asset('assets/images/fav-icon.png')}}">
+
 
         <!-- Animation -->
 <link href="{{asset('assets/css/animate.css')}}" rel="stylesheet">
@@ -86,7 +86,11 @@
             </li>
 
             <li>
-                <a href="{{route('publicite.index')}}"><i class="material-icons blue-text">group</i>publicite</a>           
+                <a href="{{route('publicite.index')}}"><i class="material-icons blue-text">camera_roll</i>publicite</a>           
+            </li>
+
+             <li>
+                <a href="{{route('profile',Auth::user()->id)}}"><i class="material-icons blue-text">account_circle</i>profile</a>           
             </li>
 
             @endif

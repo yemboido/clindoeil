@@ -94,6 +94,15 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         //
+
+        User::find($id)->update([
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'role'=>$request['role'],
+            'password' => Hash::make($request['password']),
+        ]);
+
+        return redirect('users')->with('message', 'Utilisateur bien modifier');
     }
 
     /**

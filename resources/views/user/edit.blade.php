@@ -39,7 +39,7 @@
                                 @error('role') <div class="error text-danger" >{{ $message }}</div> @enderror 
                             </div>
 
-                            @if(Auth::user()->role != "admin")
+                            @if(Auth::user()->id == $user->id)
 
                             <div class="input-field">
                                   <label for="nom">Mots de passe</label>

@@ -95,14 +95,16 @@ class UserController extends Controller
     {
         //
 
-        User::find($id)->update([
+        $user=User::find($id)->update([
             'name' => $request['name'],
             'email' => $request['email'],
             'role'=>$request['role'],
             'password' => Hash::make($request['password']),
         ]);
 
-        return redirect('users')->with('message', 'Utilisateur bien modifier');
+        session()->flash('message', 'Utilisateur bien modifiè');
+        return  redirect()->route('profile', ['id' => $id]);
+        //return redirect('users.profile',);
     }
 
     /**

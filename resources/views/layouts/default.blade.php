@@ -2,19 +2,6 @@
 <html lang="en">
     <head>
 
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-        <!-- Google meta for SEO start -->
-        <meta name="author" content="">
-        <meta name="description" content="">
-        <meta name="keywords" content="">
-        <meta property="og:title" content="" />
-        <meta property="og:type" content="" />
-        <meta property="og:url" content="=" />
-        <meta property="og:image" content="" />
-        <meta property="og:description" content="" />
-
         <title>Clindoeil</title>
 
         <!-- Fav Icon -->

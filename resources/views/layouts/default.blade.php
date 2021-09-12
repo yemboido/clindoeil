@@ -4,9 +4,7 @@
 
         <title>Clindoeil</title>
 
-        <!-- Fav Icon -->
-   
-
+      
         <!-- Animation -->
         <link href="{{asset('assets/css/animate.css')}}" rel="stylesheet">
         <link href="{{asset('assets/css/aos.min.css')}}" rel="stylesheet">

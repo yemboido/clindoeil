@@ -61,7 +61,7 @@
                                     </h6>
                                     <!--small description-->
                                     <span style="text-align:justify;">
-                                      {{substr($article->details,0,100)}}...<a href="{{route('lirePlus',$article->id)}}">LirePlus</a>
+                                      {{substr($article->details,0,150)}}...<a href="{{route('lirePlus',$article->id)}}">LirePlus</a>
                                     </span>
                                     <!--category-->
                                     <h6 class="mt-5">
@@ -70,15 +70,43 @@
                                     <div class="row mt-4">
                                       <!--author-->
                                       <div class="col s7 mt-1">
-                                        <img src="{{asset('assets/images/persons/author-1.png')}}" alt="authorname" class="circle mr-3 width-30 vertical-text-middle" height="55" width="55">
-                                        <span class="pt-2">{{$article->user->name}}<!-- <a href="#"  class="tooltipped" data-position="right" data-tooltip="Consult the articles of this blogger"></a> --></span>
+                                     <!--    <img src="{{asset('assets/images/persons/author-1.png')}}" alt="authorname" class="circle mr-3 width-30 vertical-text-middle" height="55" width="55"> -->
+                                        <span class="pt-2"><!-- <a href="#"  class="tooltipped" data-position="right" data-tooltip="Consult the articles of this blogger"></a> --></span>
+                                      
+
                                       </div>
                                       <!--date -->
-                                      <div class="col s5 mt-3 right-align social-icon"> <span class="ml-3 vertical-align-top">{{$article->created_at}}</span>
+                                      <div class="col s5 mt-3 right-align "> <span class="ml-3 vertical-align-top"></span>
                                       </div>
+
                                     </div>
+
+                                      <meta property="og:url"                content="http://clindoeil.online/lirePlus/{{$article->id}}" />
+<meta property="og:type"               content="article" />
+<meta property="og:title"              content="{{$article->titre}}" />
+<meta property="og:description"        content="{{substr($article->details,0,150)}}" />
+<meta property="og:image:url"              content="{{asset('storage/upload/image/'.$article->image)}}" />
+
+
+
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- Your share button code -->
+<div class="fb-share-button" 
+data-href="http://clindoeil.online/lirePlus/{{$article->id}}"
+data-layout="button">
+</div>
                                   </div>
-                              
+                            
+       
                             </div>
                             @endforeach
                           

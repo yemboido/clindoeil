@@ -88,8 +88,6 @@
 <meta property="og:url" content="http://clindoeil.online/lirePlus/{{$article->id}}" />
 <meta property="og:image" content="{{asset('storage/upload/image/'.$article->image)}}" />
 
-<meta property="og:image:type" content="image/jpeg">
-
 
 
 <!-- Load Facebook SDK for JavaScript -->

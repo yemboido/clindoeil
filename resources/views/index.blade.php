@@ -81,11 +81,7 @@
 
                                     </div>
 
-                                      <meta property="og:url"                content="http://clindoeil.online/lirePlus/{{$article->id}}" />
-<meta property="og:type"               content="article" />
-<meta property="og:title"              content="{{$article->titre}}" />
-<meta property="og:description"        content="{{substr($article->details,0,150)}}" />
-<meta property="og:image:url"              content="{{asset('storage/upload/image/'.$article->image)}}" />
+
 
 
 

@@ -81,7 +81,14 @@
 
                                     </div>
 
+<meta name="description" content="{{substr($article->details,0,150)}}" />
+<meta name="keywords" content="" />
+<meta property="og:title" content="{{$article->titre}}" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://clindoeil.online/lirePlus/{{$article->id}}" />
+<meta property="og:image" content="{{asset('storage/upload/image/'.$article->image)}}" />
 
+<meta property="og:image:type" content="image/jpeg">
 
 
 

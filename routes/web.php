@@ -47,5 +47,5 @@ Route::get('lirePlus/{id}',[AccueilController::class,'lireArticle'])->name('lire
 
 Auth::routes();
 
-Route::get('/email',[PasswordReset::class,'create']);
+Route::get('/email',[PasswordReset::class,'create'])->name('email');
 Route::post('/email',[PasswordReset::class,'sendEmail'])->name('send.email');

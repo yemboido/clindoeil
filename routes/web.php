@@ -8,6 +8,7 @@ use App\Http\Controllers\PubliciteController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CommentaireController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PasswordReset;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -46,3 +47,5 @@ Route::get('lirePlus/{id}',[AccueilController::class,'lireArticle'])->name('lire
 
 Auth::routes();
 
+Route::get('/email',[PasswordReset::class,'create']);
+Route::post('/email',[PasswordReset::class,'sendEmail'])->name('send.email');

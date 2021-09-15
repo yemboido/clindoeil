@@ -51,48 +51,28 @@
                         </div>
 
                         <div class="card-content">
-                          <blockquote>Connexion</blockquote>
-                          <form  method="POST" action="{{ route('login') }}">
-                        @csrf
-
-                             <div class="input-field">
-                                  <i class="material-icons prefix icone_color">person_outline</i>
-                                  <input type="email" id="email" name="email" required="" value="" class="validate"
-
-                                  name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                
-
-                                  <label for="email" class="center-align">Email</label>
-                              @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-
-                              </div>
-
-
-                              <div class="input-field">
-                                  <i class="material-icons prefix icone_color">lock_outline</i>
-                                  <input type="password" id="password" name="password" required="" name="password" required autocomplete="current-password">
-                                  <label for="password">Mots de passe</label>
-
-                                  @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                              </div>
-
-                                    
-
-                             <button class="waves-effect waves-dark btn-large back w_100" type="submit" style="">Connexion</button>
-
-                             <a href="{{route('register')}}">Inscription</a>
-                            <span style="margin-left: 10px;"><a href="{{route('password.request')}}">Mots de passe oublié?</a></span> 
-
-                          </form>
+       
+          @if(session()->has('message'))
+              <div class="alert alert-success">
+                  {{ session()->get('message') }}
+              </div>
+          @endif
+        <form action="{{ route('send.email') }}" method="post">
+          @csrf
+          <p>Entrer votre email pour recevoir votre nouveau mots de passe que vous pouvez modifier plutard</p>
+            <div class="form-group">
+                <label>Email:</label>
+                <input type="email" name="email" class="form-control" placeholder="Enter Email">
+                @error('email')
+                  <span class="text-danger"> {{ $message }} </span>
+                @enderror
+            </div>
+            
+          
+            <div class="form-group">
+                <button type="submit" class="btn btn-success save-data">Email</button>
+            </div>
+        </form>
                                       
                         </div>
                      </div>

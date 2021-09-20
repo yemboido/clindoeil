@@ -15,10 +15,10 @@
         <meta property="og:image" content="" />
         <meta property="og:description" content="" />
 
-        <title>Clindoeil</title>
+        <title>Projet</title>
 
         <!-- Fav Icon -->
-      
+        <link rel="icon" href="assets/images/fav-icon.png">
 
         <!-- Animation -->
         <link href="assets/css/animate.css" rel="stylesheet">
@@ -90,7 +90,6 @@
                              <button class="waves-effect waves-dark btn-large back w_100" type="submit" style="">Connexion</button>
 
                              <a href="{{route('register')}}">Inscription</a>
-                            <span style="margin-left: 10px;"><a href="{{route('password.request')}}">Mots de passe oublié?</a></span> 
 
                           </form>
                                       

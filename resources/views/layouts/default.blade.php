@@ -50,8 +50,7 @@
                      
 
                       @if (Auth::guest())
-                       <li> <a href="{{route('register')}}" class="white-text">Inscription</a></li>
-                      <li> <a href="{{route('login')}}" class="white-text">Connexion</a></li>
+         <li> <a href="{{route('login')}}" class="white-text">Connexion</a></li>
                       @else
                  
 

@@ -15,9 +15,10 @@
         <meta property="og:image" content="" />
         <meta property="og:description" content="" />
 
-        <title>Clindoeil</title>
+        <title>Projet</title>
 
         <!-- Fav Icon -->
+        <link rel="icon" href="assets/images/fav-icon.png">
 
         <!-- Animation -->
         <link href="assets/css/animate.css" rel="stylesheet">
@@ -36,8 +37,6 @@
     </head>
 
     <body id="home">
-
-
 
         <main class="marge top_3">
 
@@ -64,7 +63,7 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nom et prènom') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nom') }}</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>

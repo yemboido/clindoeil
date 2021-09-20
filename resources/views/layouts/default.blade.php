@@ -25,6 +25,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
   
     <!-- Compiled and minified JavaScript -->
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'>
    
         
     </head>
@@ -169,5 +172,9 @@
         <script src="{{asset('assets/js/form-validate.js')}}"></script>
         
          <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+         <script src='https://codepen.io/j_holtslander/pen/pLNzQb.js'></script>
+         <script  src="{{asset('assets/js/script.js')}}"></script>
+
+        <script src='https://codepen.io/j_holtslander/pen/pLNzQb.js'></script>
     </body>
 </html>

@@ -24,7 +24,7 @@ Route::middleware(['auth'])->group(function () {
  Route::get('/admin',[AdminController::class,'index'])->name('admin');
  Route::resource('categories',CategorieController::class);
  Route::resource('articles',ArticleController::class);
- Route::get('sorted/{id}',[ArticleController::class, 'sortByCategorie'])->name('sorted');
+
 
 
  Route::resource('commentaire',CommentaireController::class);
@@ -40,7 +40,7 @@ Route::middleware(['auth'])->group(function () {
  Route::resource('publicite',PubliciteController::class);
 
 });
-
+ Route::get('sorted/{id}',[ArticleController::class, 'sortByCategorie'])->name('sorted');
 Route::get('/',[AccueilController::class,'index'])->name('index');
 Route::get('lirePlus/{id}',[AccueilController::class,'lireArticle'])->name('lirePlus');
 

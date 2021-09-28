@@ -15,7 +15,7 @@ class AccueilController extends Controller
     	$categories=Categorie::latest()->paginate(10);
     	$articles=Article::latest()->paginate(10);
         $infos=Article::latest()->paginate(10);
-        $publicites=Publicite::where('dateFin','>=',date('Y-m-d'))->get(); 
+        $publicites=Publicite::where('dateFin','>=',date('Y-m-d'))->take(1); 
         //dd($articles);
     	return view('index',compact('categories','articles','infos','publicites'));
     }

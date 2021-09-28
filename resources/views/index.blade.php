@@ -4,8 +4,9 @@
 
 
  <div class="carousel carousel-slider" style="height: 300px">
+
    @foreach(App\Models\Publicite::where('dateFin','>=',date('Y-m-d'))->get()  as $publicite)
-    <a class="carousel-item" href="#one!"><img src="{{asset('storage/upload/publicite/'.$publicite->image)}}"></a>
+    <a class="carousel-item" href="#"><img src="{{asset('storage/upload/publicite/'.$publicite->image)}}"></a>
    @endforeach
   </div>
   
